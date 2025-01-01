@@ -65,7 +65,7 @@ export const Home = () => {
     <div className="relative min-h-screen">
       {/* Clear version */}
       <img
-        src="../../src/assets/frame-no-water-blur.png"
+        src="/frame-no-water-blur.png"
         alt="EXILISCOPE"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -79,7 +79,7 @@ export const Home = () => {
         }}
       >
         <img
-          src="../../src/assets/frame-frosted.png"
+          src="/frame-frosted.png"
           alt=""
           className="w-full h-full object-cover"
         />
@@ -90,7 +90,7 @@ export const Home = () => {
         }`}
       >
         <img
-          src="../../src/assets/notniqo.svg"
+          src="/notniqo.svg"
           alt="Logo"
           className="w-60 h-auto cursor-pointer"
           onClick={() => {
