@@ -16,10 +16,10 @@ const NavMenu = () => {
             HOME
           </button>
           <button
-            onClick={() => scrollToSection("about")}
+            onClick={() => scrollToSection("socials")}
             className="hover:opacity-70 transition-opacity"
           >
-            ABOUT
+            SOCIALS
           </button>
           <button
             onClick={() => scrollToSection("updates")}

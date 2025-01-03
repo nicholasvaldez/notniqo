@@ -82,14 +82,14 @@ export const Home = () => {
         <audio ref={audioRef} src={audioFile} />
       </section>
 
-      {/* About Section */}
+      {/* Social Media Feed Section */}
       <section
-        id="about"
+        id="socials"
         className="min-h-screen bg-white flex items-center justify-center"
       >
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl mb-8 text-zinc-600">About</h2>
-          {/* Add your about content here */}
+          <h2 className="text-4xl mb-8 text-zinc-600">Social Media Feed</h2>
+          {/* Add your socials content here */}
         </div>
       </section>
 
