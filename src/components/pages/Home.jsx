@@ -37,7 +37,7 @@ export const Home = () => {
 
   return (
     <div className="relative">
-      <NavMenu />
+      {/* <NavMenu /> */}
 
       {/* Home Section */}
       <section id="home" className="min-h-screen relative">
@@ -83,37 +83,34 @@ export const Home = () => {
       </section>
 
       {/* Social Media Feed Section */}
-      <section
+      {/* <section
         id="socials"
         className="min-h-screen bg-white flex items-center justify-center"
       >
         <div className="container mx-auto px-4">
           <h2 className="text-4xl mb-8 text-zinc-600">Social Media Feed</h2>
-          {/* Add your socials content here */}
         </div>
-      </section>
+      </section> */}
 
       {/* Updates Section */}
-      <section
+      {/* <section
         id="updates"
         className="min-h-screen bg-zinc-50 flex items-center justify-center"
       >
         <div className="container mx-auto px-4">
           <h2 className="text-4xl mb-8 text-zinc-600">Get Updates</h2>
-          {/* Add your updates content here */}
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
-      <section
+      {/* <section
         id="contact"
         className="min-h-screen bg-white flex items-center justify-center"
       >
         <div className="container mx-auto px-4">
           <h2 className="text-4xl mb-8 text-zinc-600">Contact</h2>
-          {/* Add your contact content here */}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
