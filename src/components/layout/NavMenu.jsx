@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import { scrollToSection } from "../../utils/scrollUtils";
+import UpdatesModal from "../ui/UpdatesModal";
 
 const NavMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <nav className="fixed top-8 right-8 z-50">
@@ -25,7 +27,12 @@ const NavMenu = () => {
         }`} style={{ fontFamily: 'Inter', fontWeight: 700, letterSpacing: '-0.05em' }}>
           <button
             onClick={() => {
-              scrollToSection("home");
+              // If not on homepage, navigate to it, otherwise scroll to top
+              if (window.location.pathname !== '/') {
+                window.location.href = '/';
+              } else {
+                scrollToSection("home");
+              }
               setIsOpen(false);
             }}
             className="hover:opacity-70 transition-opacity bg-none border-none p-0 cursor-pointer"
@@ -34,7 +41,7 @@ const NavMenu = () => {
           </button>
           <button
             onClick={() => {
-              scrollToSection("about");
+              window.location.href = '/about';
               setIsOpen(false);
             }}
             className="hover:opacity-70 transition-opacity bg-none border-none p-0 cursor-pointer"
@@ -43,7 +50,7 @@ const NavMenu = () => {
           </button>
           <button
             onClick={() => {
-              scrollToSection("updates");
+              setIsModalOpen(true);
               setIsOpen(false);
             }}
             className="hover:opacity-70 transition-opacity bg-none border-none p-0 cursor-pointer"
@@ -52,7 +59,7 @@ const NavMenu = () => {
           </button>
           <button
             onClick={() => {
-              scrollToSection("contact");
+              window.location.href = '/contact';
               setIsOpen(false);
             }}
             className="hover:opacity-70 transition-opacity bg-none border-none p-0 cursor-pointer"
@@ -61,6 +68,11 @@ const NavMenu = () => {
           </button>
         </div>
       </div>
+      
+      <UpdatesModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </nav>
   );
 };
