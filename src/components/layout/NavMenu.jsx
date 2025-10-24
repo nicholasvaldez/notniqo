@@ -22,7 +22,7 @@ const NavMenu = () => {
         {/* Navigation Items */}
         <div className={`absolute top-12 right-0 flex flex-col items-end text-sm space-y-3 font-bold text-black transition-all duration-500 ${
           isOpen ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-8 pointer-events-none'
-        }`}>
+        }`} style={{ fontFamily: 'Inter', fontWeight: 700, letterSpacing: '-0.05em' }}>
           <button
             onClick={() => {
               scrollToSection("home");
