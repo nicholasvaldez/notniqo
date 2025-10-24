@@ -37,7 +37,7 @@ export const Home = () => {
 
   return (
     <div className="relative">
-      {/* <NavMenu /> */}
+      <NavMenu />
 
       {/* Home Section */}
       <section id="home" className="min-h-screen relative">

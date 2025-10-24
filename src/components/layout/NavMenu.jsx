@@ -1,73 +1,65 @@
-import React from "react";
-import { Menu } from "lucide-react";
+import React, { useState } from "react";
+import { Squash as Hamburger } from "hamburger-react";
 import { scrollToSection } from "../../utils/scrollUtils";
 
 const NavMenu = () => {
-  return (
-    <nav className="fixed bottom-8 right-8 z-50">
-      <div className="relative hover-menu">
-        <Menu size={24} className="hamburger cursor-pointer text-zinc-600" />
+  const [isOpen, setIsOpen] = useState(false);
 
-        <div className="menu-items flex flex-col items-end text-sm space-y-1 font-bold text-zinc-600">
+  return (
+    <nav className="fixed top-8 right-8 z-50">
+      <div className="relative">
+        <Hamburger
+          toggled={isOpen}
+          toggle={setIsOpen}
+          size={32}
+          color="#000000"
+          duration={0.6}
+          easing="ease-in-out"
+          rounded
+          label="Show menu"
+        />
+
+        {/* Navigation Items */}
+        <div className={`absolute top-12 right-0 flex flex-col items-end text-sm space-y-3 font-bold text-black transition-all duration-500 ${
+          isOpen ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-8 pointer-events-none'
+        }`}>
           <button
-            onClick={() => scrollToSection("home")}
-            className="hover:opacity-70 transition-opacity"
+            onClick={() => {
+              scrollToSection("home");
+              setIsOpen(false);
+            }}
+            className="hover:opacity-70 transition-opacity bg-none border-none p-0 cursor-pointer"
           >
             HOME
           </button>
           <button
-            onClick={() => scrollToSection("socials")}
-            className="hover:opacity-70 transition-opacity"
+            onClick={() => {
+              scrollToSection("about");
+              setIsOpen(false);
+            }}
+            className="hover:opacity-70 transition-opacity bg-none border-none p-0 cursor-pointer"
           >
-            SOCIALS
+            ABOUT
           </button>
           <button
-            onClick={() => scrollToSection("updates")}
-            className="hover:opacity-70 transition-opacity"
+            onClick={() => {
+              scrollToSection("updates");
+              setIsOpen(false);
+            }}
+            className="hover:opacity-70 transition-opacity bg-none border-none p-0 cursor-pointer"
           >
-            GET UPDATES
+            UPDATES
           </button>
           <button
-            onClick={() => scrollToSection("contact")}
-            className="hover:opacity-70 transition-opacity"
+            onClick={() => {
+              scrollToSection("contact");
+              setIsOpen(false);
+            }}
+            className="hover:opacity-70 transition-opacity bg-none border-none p-0 cursor-pointer"
           >
             CONTACT
           </button>
         </div>
-
-        <style jsx>{`
-          .hover-menu .menu-items {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            transform: translateX(100%);
-            transition: transform 0.3s ease-out;
-            opacity: 0;
-          }
-
-          .hover-menu:hover .menu-items {
-            transform: translateX(0);
-            opacity: 1;
-          }
-
-          .hover-menu:hover .hamburger {
-            opacity: 0;
-          }
-
-          .hamburger {
-            transition: opacity 0.3s ease-out;
-          }
-
-          .menu-items button {
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            text-align: right;
-            display: block;
-            white-space: nowrap;
-          }
-        `}</style>
       </div>
     </nav>
   );
